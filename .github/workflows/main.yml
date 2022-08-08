@@ -1,6 +1,7 @@
 name: Cypress e2e demo tests
 on:
   push:
+  workflow_dispatch:
   # schedule:
   #  # run 5 minutes past every 2nd hour
   #  - cron: '5 */2 * * *'
