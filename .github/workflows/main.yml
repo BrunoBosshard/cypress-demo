@@ -1,9 +1,9 @@
 name: Cypress e2e demo tests
 on:
   push:
-  schedule:
-    # run 5 minutes past every 2nd hour
-    # - cron: '5 */2 * * *'
+  # schedule:
+  #  # run 5 minutes past every 2nd hour
+  #  - cron: '5 */2 * * *'
 jobs:
   cypress-e2e-demo:
     name: Cypress on Google Chrome 103
