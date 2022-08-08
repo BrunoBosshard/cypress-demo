@@ -1,0 +1,66 @@
+name: Cypress e2e demo tests
+on:
+  push:
+  schedule:
+    # run 5 minutes past every 2nd hour
+    # - cron: '5 */2 * * *'
+jobs:
+  cypress-e2e-demo:
+    name: Cypress on Google Chrome 103
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node16.14.2-slim-chrome103-ff102
+    # stop the job if it runs over 115 minutes
+    # to prevent a hanging process from using CI minutes
+    timeout-minutes: 115
+    steps:
+      - name: Delete workflow runs older than one week
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 7
+          keep_minimum_runs: 10
+      - name: Checkout
+        uses: actions/checkout@v3
+      # install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          build: npm ci --production
+          start: npm run cypress:run:chrome
+        continue-on-error: true
+      - name: Create report folder
+        run: mkdir -m777 public
+      - name: Copy test execution videos to report
+        run: cp -r cypress/videos public
+      - name: Merge test results into one
+        run: npm run report:merge
+      - name: Generate HTML report
+        run: npm run report:generate
+      # report includes videos
+      - name: Upload artifacts report
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-report
+          path: public
+          if-no-files-found: ignore
+      # screenshots will only be generated on failures
+      - name: Upload artifacts screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
+      - name: Upload artifacts fixtures
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-fixtures
+          path: cypress/fixtures/*.csv
+          if-no-files-found: ignore
+      - name: Deploy Cypress report
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          destination_dir: docs
