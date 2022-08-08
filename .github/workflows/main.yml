@@ -7,9 +7,9 @@ on:
   #  - cron: '5 */2 * * *'
 jobs:
   cypress-e2e-demo:
-    name: Cypress on Google Chrome 103
+    name: Cypress on Google Chrome 100
     runs-on: ubuntu-latest
-    container: cypress/browsers:node16.14.2-slim-chrome103-ff102
+    container: cypress/browsers:node16.13.2-chrome100-ff98
     # stop the job if it runs over 115 minutes
     # to prevent a hanging process from using CI minutes
     timeout-minutes: 115
