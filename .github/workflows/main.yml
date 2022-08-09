@@ -2,9 +2,9 @@ name: Cypress demo tests
 on:
   push:
   workflow_dispatch:
-  # schedule:
+  schedule:
     # run 5 minutes past every 2nd hour
-    # - cron: '5 1/2 * * *'
+    - cron: '5 1/2 * * *'
 jobs:
   cypress-demo:
     name: Cypress on Google Chrome 100
