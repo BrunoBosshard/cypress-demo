@@ -7,7 +7,7 @@ on:
   #  - cron: '5 */2 * * *'
 jobs:
   cypress-e2e-demo:
-    name: Cypress on Electron
+    name: Cypress on Chrome 103
     runs-on: ubuntu-latest
     container: cypress/browsers:node16.14.2-slim-chrome103-ff102
     # stop the job if it runs over 115 minutes
@@ -29,7 +29,7 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           build: npm ci --production
-          start: npx cypress run --config-file=cypress.config.js
+          start: npm run cypress:run:chrome
         continue-on-error: true
       - name: Create report folder
         run: mkdir -m777 public
