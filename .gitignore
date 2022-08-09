@@ -1,6 +1,0 @@
-**/cypress/downloads
-**/cypress/fixtures/*.json
-**/cypress/reports
-**/cypress/screenshots
-**/cypress/videos
-**/node_modules
