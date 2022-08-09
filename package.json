@@ -14,9 +14,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "cypress": "^10.4.0"
-  },
   "dependencies": {
     "cypress-grep": "^3.0.2",
     "cypress-mochawesome-reporter": "^3.2.0",
@@ -24,5 +21,8 @@
     "mocha": "^10.0.0",
     "mochawesome-merge": "^4.2.1",
     "mochawesome-report-generator": "^6.2.0"
+  },
+  "devDependencies": {
+    "cypress": "^10.0.3"
   }
 }
