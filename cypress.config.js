@@ -3,7 +3,8 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      require('cypress-grep/src/plugin')(config);
+      return config;
     },
     "defaultCommandTimeout": 120000,
     "pageLoadTimeout": 180000,
@@ -16,10 +17,6 @@ module.exports = defineConfig({
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
       "configFile": "reporter-config.json"
-    },
-    setupNodeEvents(on, config) {
-      require('cypress-grep/src/plugin')(config);
-      return config;
     }
   }
 });
