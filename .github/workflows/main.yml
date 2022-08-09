@@ -7,7 +7,7 @@ on:
     # - cron: '5 1/2 * * *'
 jobs:
   cypress-demo:
-    name: Cypress on Chrome 100
+    name: Cypress on Google Chrome 100
     runs-on: ubuntu-latest
     container: cypress/browsers:node16.13.2-chrome100-ff98
     # stop the job if it runs over 115 minutes
@@ -26,7 +26,7 @@ jobs:
       # install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v2
         with:
           build: npm ci --production
           start: npm run cypress:run:chrome
