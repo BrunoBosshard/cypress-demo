@@ -1,6 +1,6 @@
 name: Cypress demo tests
 on:
-  # push:
+  push:
   workflow_dispatch:
   # schedule:
     # run 5 minutes past every 2nd hour
@@ -22,7 +22,7 @@ jobs:
           retain_days: 7
           keep_minimum_runs: 10
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       # install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
