@@ -26,10 +26,11 @@ jobs:
       # install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           build: npm ci --production
-          start: npm run cypress:run:chrome
+          browser: chrome
+          start: npx cypress run
         continue-on-error: true
       - name: Create report folder
         run: mkdir -m777 public
