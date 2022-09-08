@@ -1,6 +1,5 @@
 **/cypress/downloads
 **/cypress/reports
-**/cypress/results
 **/cypress/screenshots
 **/cypress/videos
 **/node_modules
