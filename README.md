@@ -1,6 +1,6 @@
 # Cypress demo tests
 
-### _Cypress example tests for GitHub
+### Cypress example tests for GitHub
 
 An example implementation of Cypress tests with a GitHub workflow 
 that generates a HTML report published on GitHub Pages.
