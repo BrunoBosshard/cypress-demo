@@ -1,4 +1,4 @@
-# Cypress demo tests
+# Cypress demo
 
 ### Cypress example tests for GitHub
 
