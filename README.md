@@ -25,9 +25,9 @@ Run tests headlessly:
 ```sh
 npx cypress run
 ```
-Run tests with the substring "Check" in the title (passed as an environment variable):
+Run tests with the substring "check" in the title (passed as an environment variable):
 ```sh
-npx cypress run --env grep=Check
+npx cypress run --env grep=check
 ```
 Run tests with the Tag "@smoke" (passed as an environment variable):
 ```sh
