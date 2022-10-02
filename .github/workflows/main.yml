@@ -3,8 +3,8 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    # run at minute 5 past every 3rd hour from 0 through 23
-    - cron: '5 0/3 * * *'
+    # run at minute 5 past every 4th hour from 0 through 23
+    - cron: '5 0/4 * * *'
 jobs:
   cypress-demo:
     name: Cypress on Google Chrome 100
