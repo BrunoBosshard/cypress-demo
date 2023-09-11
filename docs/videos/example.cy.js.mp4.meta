@@ -1,0 +1,21 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=2645
+END=4534
+title=example tests basic test
+[CHAPTER]
+TIMEBASE=1/1000
+START=9557
+END=10242
+title=example tests check https://www.bing.com
+[CHAPTER]
+TIMEBASE=1/1000
+START=10367
+END=13531
+title=example tests check https://www.npmjs.com
+[CHAPTER]
+TIMEBASE=1/1000
+START=17723
+END=19723
+title=example tests check https://www.nuget.org
