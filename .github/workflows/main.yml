@@ -41,7 +41,7 @@ jobs:
         run: npm run report:generate
       # report includes videos
       - name: Upload artifacts report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-report
           path: public
