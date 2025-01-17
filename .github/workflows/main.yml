@@ -48,13 +48,13 @@ jobs:
           if-no-files-found: ignore
       # screenshots will only be generated on failures
       - name: Upload artifacts screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
           path: cypress/screenshots
           if-no-files-found: ignore
       - name: Upload artifacts fixtures
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-fixtures
           path: cypress/fixtures
